@@ -1,0 +1,6 @@
+// Function calc `px` to `rem`
+// Important: `rem` function need to relatedness with `magic` function in js file
+@function rem($px) {
+  $rem: ($px * 320) / 1024;
+  @return #{$rem / 10}rem;
+}

@@ -5,6 +5,7 @@ import store from "@/store/index.js";
 import { i18n } from "@/plugins/i18n";
 import { translation } from "./plugins/translation";
 import "@/registerServiceWorker";
+import mixin from "@/mixin";
 
 // global components
 import Default from "@/layouts/Default";
@@ -17,6 +18,7 @@ Vue.prototype.$i18nRoute = translation.i18nRoute.bind(translation);
 
 // register global components
 Vue.component("default-layout", Default);
+Vue.mixin(mixin);
 
 new Vue({
   router,

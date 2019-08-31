@@ -1,20 +1,16 @@
-* {
-  box-sizing: border-box;
-}
+@import "~normalize.css";
 
-body {
-  background: #efefef;
-  margin: 0;
-}
+// mixins
+@import "./mixins/rem.scss";
 
-img {
-  max-width: 100%;
-}
+// global
+@import "./global/variables.scss";
+@import "./global/base.scss";
 
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+// layouts
+@import "./layouts/default.scss";
+
+// components
+@import "./components/header.scss";
+@import "./components/language-switcher.scss";
+@import "./components/navigations.scss";
