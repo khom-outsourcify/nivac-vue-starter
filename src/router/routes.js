@@ -30,6 +30,11 @@ export default [
         path: "about",
         name: "about",
         component: load("About")
+      },
+      {
+        path: "games/:game",
+        name: "games",
+        component: load("Games")
       }
     ]
   },

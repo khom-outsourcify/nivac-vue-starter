@@ -40,11 +40,6 @@
 import _ from "lodash";
 import moment from "moment";
 
-const shuffle = payload => {
-  let cards = [].concat(_.cloneDeep(payload), _.cloneDeep(payload));
-  return _.shuffle(cards);
-};
-
 export default {
   props: {
     items: {
@@ -66,8 +61,11 @@ export default {
     };
   },
   methods: {
+    shuffle(payload) {
+      return _.shuffle([].concat(_.cloneDeep(payload), _.cloneDeep(payload)));
+    },
     resetGame() {
-      const cards = shuffle(this.items);
+      const cards = this.shuffle(this.items);
 
       this.showSplash = false;
       this.turns = 0;
@@ -82,29 +80,24 @@ export default {
 
       this.cards = cards;
     },
-
     flippedCards() {
       return _.filter(this.cards, card => card.flipped);
     },
-
     sameFlippedCard() {
       let flippedCards = this.flippedCards();
       if (flippedCards.length == 2) {
         if (flippedCards[0].name == flippedCards[1].name) return true;
       }
     },
-
     setCardFounds() {
       _.each(this.cards, card => {
         if (card.flipped) card.found = true;
       });
     },
-
     checkAllFound() {
       let foundCards = _.filter(this.cards, card => card.found);
       if (foundCards.length == this.cards.length) return true;
     },
-
     startGame() {
       this.started = true;
       this.startTime = moment();
@@ -113,7 +106,6 @@ export default {
         this.time = moment(moment().diff(this.startTime)).format("mm:ss");
       }, 1000);
     },
-
     finishGame() {
       this.started = false;
       clearInterval(this.timer);
@@ -124,7 +116,6 @@ export default {
       this.score = Math.max(score, 0);
       this.showSplash = true;
     },
-
     flipCard(card) {
       if (card.found || card.flipped) return;
 
@@ -159,17 +150,14 @@ export default {
         }
       }
     },
-
     clearFlips() {
       _.map(this.cards, card => (card.flipped = false));
     },
-
     clearFlipBackTimer() {
       clearTimeout(this.flipBackTimer);
       this.flipBackTimer = null;
     }
   },
-
   created() {
     this.resetGame();
   }

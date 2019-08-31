@@ -13,7 +13,12 @@
 // components
 @import "./components/header.scss";
 @import "./components/language-switcher.scss";
+@import "./components/list.scss";
 @import "./components/navigations.scss";
 
 // components/games
 @import "./components/games/memory-game.scss";
+@import "./components/games/dnd.scss";
+
+// pages
+@import "./pages/games.scss";

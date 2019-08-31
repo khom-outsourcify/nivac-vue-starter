@@ -1,0 +1,39 @@
+.dnd-game {
+  .draggable,
+  .droppable {
+    display: flex;
+    margin: rem(40) 0;
+
+    > div {
+      flex: 1;
+      height: rem(52);
+      border: 1px dashed rgba($color: #fff, $alpha: 0.2);
+      border-radius: rem(10);
+      margin: 0 rem(10);
+    }
+
+    .item {
+      margin: rem(5);
+      padding: rem(10);
+      height: rem(40);
+      border-radius: rem(6);
+    }
+  }
+
+  .draggable {
+    .item {
+      background: rgba($color: #fff, $alpha: 0.2);
+
+      cursor: move;
+    }
+  }
+
+  .droppable {
+    .placeholder {
+      opacity: 0.25;
+      position: absolute;
+      width: calc(100% - #{rem(10)});
+      text-align: center;
+    }
+  }
+}

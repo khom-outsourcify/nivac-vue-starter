@@ -1,0 +1,17 @@
+.games {
+  background: #1d1e22;
+  color: #eee;
+  border-radius: rem(10);
+  padding: rem(20);
+  height: rem(680);
+  display: flex;
+  overflow: hidden;
+
+  .sidebar {
+    flex: 1;
+  }
+
+  .view {
+    flex: 3;
+  }
+}

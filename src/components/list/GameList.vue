@@ -1,0 +1,14 @@
+<template>
+  <ul class="list">
+    <li>
+      <router-link
+        :to="$i18nRoute({ name: 'games', params: {game: `memory-game`} })"
+      >{{ $t('memory-game') }}</router-link>
+    </li>
+    <li>
+      <router-link
+        :to="$i18nRoute({ name: 'games', params: {game: `drag-and-drop`} })"
+      >{{ $t('drag-and-drop') }}</router-link>
+    </li>
+  </ul>
+</template>
