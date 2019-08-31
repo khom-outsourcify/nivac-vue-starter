@@ -4,8 +4,9 @@ import router from "@/router/index.js";
 import store from "@/store/index.js";
 import { i18n } from "@/plugins/i18n";
 import { translation } from "./plugins/translation";
+import mixin from "@/utils/mixin";
 import "@/registerServiceWorker";
-import mixin from "@/mixin";
+import "@/utils/filters";
 
 // global components
 import Default from "@/layouts/Default";

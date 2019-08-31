@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="@/assets/images/logo.png" />
+    <h1>{{ $t('welcome_message') }}</h1>
   </div>
 </template>
 
