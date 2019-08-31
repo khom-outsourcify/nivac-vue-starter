@@ -1,6 +1,9 @@
 <template>
   <div class="language-switcher" ref="switcher">
-    <div @click="opened = !opened">{{ getLanguageName(currentLanguage)|capitalize }}</div>
+    <div
+      class="language-switcher--current"
+      @click="opened = !opened"
+    >{{ getLanguageName(currentLanguage)|capitalize }}</div>
     <transition name="fade">
       <ul class="language-switcher--list" v-if="opened && languages.length > 1">
         <li
