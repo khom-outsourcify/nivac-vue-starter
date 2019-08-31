@@ -1,0 +1,146 @@
+.memory-game {
+  background: #1d1e22;
+  color: white;
+  border-radius: rem(10);
+  padding: rem(20);
+  margin: rem(20) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.info {
+  text-align: center;
+  padding-bottom: rem(15);
+  border-bottom: 1px solid #555;
+
+  > div {
+    display: inline-block;
+    width: rem(200);
+
+    .label {
+      margin-right: rem(5);
+    }
+
+    .value {
+      font-weight: bold;
+    }
+  }
+}
+
+.cards {
+  .card {
+    position: relative;
+    display: inline-block;
+    width: rem(100);
+    height: rem(150);
+    margin: rem(10) rem(20);
+    transition: opacity 0.5s;
+
+    .front,
+    .back {
+      border-radius: rem(5);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-color: White;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .back {
+      background-image: url("../../assets/images/card-backside.jpg");
+      background-size: 90%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      font-size: rem(12);
+    }
+
+    .front {
+      transform: rotateY(-180deg);
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &.flipped,
+    &.found {
+      .back {
+        transform: rotateY(180deg);
+      }
+
+      .front {
+        transform: rotateY(0deg);
+      }
+    }
+
+    &.found {
+      opacity: 0.3;
+    }
+  }
+}
+
+.splash {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-color: rgba(#000, 0.6);
+  }
+
+  .content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: rem(400);
+    height: rem(200);
+
+    margin: auto;
+    text-align: center;
+
+    background-color: rgba(#333, 0.9);
+    border-radius: rem(10);
+    box-shadow: rem(5) rem(5) rem(20) rgba(black, 0.8);
+
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      margin-top: 0;
+    }
+
+    .score {
+      padding: rem(5);
+    }
+
+    button {
+      margin-top: rem(10);
+
+      background-color: #444;
+      padding: rem(5) rem(20);
+      border-radius: rem(4);
+      border: 1px solid #555;
+      color: white;
+    }
+  }
+}

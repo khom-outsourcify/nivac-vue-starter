@@ -1,3 +1,3 @@
 <template>
-  <img alt="Logo" src="@/assets/images/logo.png" class="logo" />
+  <img alt="Logo" src="@/assets/images/vue.png" class="logo" />
 </template>
