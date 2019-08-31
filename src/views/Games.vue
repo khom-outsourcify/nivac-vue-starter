@@ -13,19 +13,19 @@
 
 <script>
 import GameList from "../components/list/GameList";
-import MemoryGame from "@/components/games/MemoryGame";
+import Memory from "@/components/games/Memory";
 import DnD from "@/components/games/DnD";
 
 export default {
   components: {
     GameList,
-    "memory-game": MemoryGame,
+    memory: Memory,
     "drag-and-drop": DnD
   },
   data() {
     return {
       demo: {
-        "memory-game": {
+        memory: {
           items: [
             {
               name: "vue",
@@ -52,6 +52,18 @@ export default {
               image: require("@/assets/images/babel.svg")
             }
           ]
+        },
+        "drag-and-drop": {
+          items: new Array(5).fill({}).map((item, i) => {
+            return {
+              group: `group-${i}`,
+              drag: {
+                id: i,
+                data: `Draggable - ${i}`
+              },
+              drop: {}
+            };
+          })
         }
       }
     };

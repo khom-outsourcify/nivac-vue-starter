@@ -1,5 +1,5 @@
 <template>
-  <div class="memory-game">
+  <div class="memory">
     <div class="info">
       <div>
         <span class="label">Time:</span>

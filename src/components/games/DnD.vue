@@ -3,7 +3,7 @@
     <!-- Draggable -->
     <div class="draggable">
       <Container
-        v-for="(item, index) in dndItems"
+        v-for="(item, index) in items"
         :key="index"
         :group-name="item.group"
         :get-child-payload="i => item.drag"
@@ -18,7 +18,7 @@
     <!-- Droppable -->
     <div class="droppable">
       <Container
-        v-for="(item, index) in dndItems"
+        v-for="(item, index) in items"
         :key="index"
         :group-name="item.group"
         :get-child-payload="i => item.drop"
@@ -41,24 +41,18 @@ import _ from "lodash";
 
 export default {
   components: { Container, Draggable },
-  data() {
-    return {
-      dndItems: new Array(5).fill({}).map((item, i) => {
-        return {
-          group: `group-${i}`,
-          drag: {
-            id: i,
-            data: `Draggable - ${i}`
-          },
-          drop: {}
-        };
-      })
-    };
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    }
+  },
+  computed: {
+    score() {
+      return this.items.filter(item => !!item.drop.data).length;
+    }
   },
   methods: {
-    shuffle(payload) {
-      return _.shuffle();
-    },
     applyDrag(arr, dragResult) {
       const { removedIndex, addedIndex, payload } = dragResult;
       if (removedIndex === null && addedIndex === null) return arr;
@@ -66,8 +60,8 @@ export default {
       return {};
     },
     onDrop(index, collection, dropResult) {
-      this.dndItems[index][collection] = this.applyDrag(
-        this.dndItems[index][collection],
+      this.items[index][collection] = this.applyDrag(
+        this.items[index][collection],
         dropResult
       );
     }
