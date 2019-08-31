@@ -14,9 +14,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.layout-default {
-  position: relative;
-}
-</style>

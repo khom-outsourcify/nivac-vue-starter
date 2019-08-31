@@ -9,6 +9,9 @@ import "@/registerServiceWorker";
 // global components
 import Default from "@/layouts/Default";
 
+// global styles
+import "@/assets/scss/app.scss";
+
 Vue.config.productionTip = false;
 Vue.prototype.$i18nRoute = translation.i18nRoute.bind(translation);
 

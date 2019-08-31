@@ -1,21 +1,15 @@
 <template>
   <header>
-    <router-link :to="$i18nRoute({ name: 'home'})">HelloWorld Page</router-link>
-    <router-link :to="$i18nRoute({ name: 'about'})">About Page</router-link>
+    <Navigations />
   </header>
 </template>
 
-<style lang="scss">
-header {
-  padding: 10px;
+<script>
+import Navigations from "@/components/Navigations";
 
-  a {
-    margin: 0 7px;
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    Navigations
   }
-}
-</style>
+};
+</script>

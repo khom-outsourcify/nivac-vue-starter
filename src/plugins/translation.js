@@ -82,7 +82,7 @@ const translation = {
    * @return {Promise<*>|*}
    */
   loadLanguageFile(lang) {
-    return import(/* webpackChunkName: "lang-[request]" */ `@/lang/${lang}.json`);
+    return import(/* webpackChunkName: "lang-[request]" */ `@/locales/${lang}.json`);
   },
 
   /**
