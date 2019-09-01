@@ -19,7 +19,7 @@
 export default {
   computed: {
     currentPage() {
-      return this.$route.name;
+      return this.$route.name || "";
     }
   }
 };
