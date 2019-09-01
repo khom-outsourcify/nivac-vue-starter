@@ -1,5 +1,12 @@
 <template>
   <div class="dnd-game">
+    <GameInfo>
+      <div>
+        <span class="label">Score:</span>
+        <span class="value">{{ score }}</span>
+      </div>
+    </GameInfo>
+
     <!-- Draggable -->
     <div class="draggable">
       <Container
@@ -40,9 +47,14 @@
 <script>
 import { Container, Draggable, smoothDnD } from "vue-smooth-dnd";
 import _ from "lodash";
+import GameInfo from "./GameInfo";
 
 export default {
-  components: { Container, Draggable },
+  components: {
+    Container,
+    Draggable,
+    GameInfo
+  },
   props: {
     items: {
       type: Array,

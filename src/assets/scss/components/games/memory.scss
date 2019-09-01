@@ -1,31 +1,12 @@
 .memory {
   border-radius: rem(10);
-  padding: rem(20);
-  margin: rem(20) 0;
   position: relative;
   overflow: hidden;
 }
 
-.info {
-  text-align: center;
-  padding-bottom: rem(15);
-  border-bottom: 1px solid #555;
-
-  > div {
-    display: inline-block;
-    width: rem(200);
-
-    .label {
-      margin-right: rem(5);
-    }
-
-    .value {
-      font-weight: bold;
-    }
-  }
-}
-
 .cards {
+  padding: rem(20);
+
   .card {
     position: relative;
     display: inline-block;

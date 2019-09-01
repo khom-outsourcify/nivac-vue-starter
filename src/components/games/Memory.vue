@@ -1,6 +1,6 @@
 <template>
   <div class="memory">
-    <div class="info">
+    <GameInfo>
       <div>
         <span class="label">Time:</span>
         <span class="value">{{ time }}</span>
@@ -9,7 +9,7 @@
         <span class="label">Turns:</span>
         <span class="value">{{ turns }}</span>
       </div>
-    </div>
+    </GameInfo>
 
     <div class="cards">
       <div
@@ -39,8 +39,12 @@
 <script>
 import _ from "lodash";
 import moment from "moment";
+import GameInfo from "./GameInfo";
 
 export default {
+  components: {
+    GameInfo
+  },
   props: {
     items: {
       type: Array,
