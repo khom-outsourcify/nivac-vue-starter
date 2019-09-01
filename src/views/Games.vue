@@ -15,12 +15,14 @@
 import GameList from "../components/list/GameList";
 import Memory from "@/components/games/Memory";
 import DnD from "@/components/games/DnD";
+import Matching from "@/components/games/Matching";
 
 export default {
   components: {
     GameList,
     memory: Memory,
-    "drag-and-drop": DnD
+    "drag-and-drop": DnD,
+    matching: Matching
   },
   data() {
     return {

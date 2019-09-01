@@ -1,5 +1,6 @@
 {
   "welcome-message": "Welcome to Your Vue.js App",
   "memory": "Memory Game",
-  "drag-and-drop": "Drag and Drop"
+  "drag-and-drop": "Drag and Drop",
+  "matching": "Matching"
 }

@@ -8,5 +8,10 @@
         :to="$i18nRoute({ name: 'games', params: {game: `drag-and-drop`} })"
       >{{ $t('drag-and-drop') }}</router-link>
     </li>
+    <li>
+      <router-link
+        :to="$i18nRoute({ name: 'games', params: {game: `matching`} })"
+      >{{ $t('matching') }}</router-link>
+    </li>
   </ul>
 </template>

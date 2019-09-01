@@ -1,0 +1,45 @@
+.matching {
+  position: relative;
+  display: flex;
+
+  > div {
+    flex: 1;
+  }
+
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &--text {
+      padding: rem(10);
+      border-radius: rem(6);
+      background: rgba($color: #fff, $alpha: 0.2);
+    }
+
+    &--mark {
+      width: rem(15);
+      height: rem(15);
+      border-radius: 50%;
+      border: 1px solid #fff;
+      margin: rem(10);
+    }
+  }
+
+  .line {
+    position: absolute;
+    background-color: #fff;
+    transform-origin: center top;
+    pointer-events: none;
+    width: 3px;
+
+    &.incorrect {
+      background-color: rgb(237, 28, 36);
+    }
+
+    &.correct {
+      background-color: rgb(57, 181, 74);
+    }
+  }
+}
