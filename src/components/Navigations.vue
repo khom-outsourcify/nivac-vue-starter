@@ -1,10 +1,23 @@
 <template>
-  <nav class="navigations">
-    <router-link :to="$i18nRoute({ name: 'home'})">Home Page</router-link>
-    <router-link :to="$i18nRoute({ name: 'about'})">About Page</router-link>
-  </nav>
+  <div class="navigations">
+    <router-link v-if="prev" :to="$i18nRoute(prev)">
+      <span class="icon-arrow prev"></span>
+    </router-link>
+    <router-link v-if="next" :to="$i18nRoute(next)">
+      <span class="icon-arrow next"></span>
+    </router-link>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    prev() {
+      return this.$route.meta && this.$route.meta.prev;
+    },
+    next() {
+      return this.$route.meta && this.$route.meta.next;
+    }
+  }
+};
 </script>

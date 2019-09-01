@@ -7,6 +7,7 @@
         :key="index"
         :group-name="item.group"
         :get-child-payload="i => item.drag"
+        :should-accept-drop="(src, payload) => getShouldAcceptDrop(index, src, payload)"
         @drop="onDrop(index, 'drag', $event)"
       >
         <Draggable v-if="item.drag.data">
@@ -22,6 +23,7 @@
         :key="index"
         :group-name="item.group"
         :get-child-payload="i => item.drop"
+        :should-accept-drop="(src, payload) => getShouldAcceptDrop(index, src, payload)"
         @drop="onDrop(index, 'drop', $event)"
       >
         <div v-if="item.drop.data">
@@ -64,6 +66,9 @@ export default {
         this.items[index][collection],
         dropResult
       );
+    },
+    getShouldAcceptDrop(index, src, payload) {
+      return this.items[index].group === src.groupName;
     }
   }
 };

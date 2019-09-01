@@ -27,8 +27,12 @@
   &.light {
     li {
       a {
-        background: white;
+        background: rgba($color: #fff, $alpha: 0.5);
         color: #1d1e22;
+
+        &.router-link-exact-active {
+          background: white;
+        }
       }
     }
   }

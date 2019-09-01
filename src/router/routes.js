@@ -24,12 +24,28 @@ export default [
       {
         path: "",
         name: "home",
-        component: Home
+        component: Home,
+        meta: {
+          next: {
+            name: "about"
+          }
+        }
       },
       {
         path: "about",
         name: "about",
-        component: load("About")
+        component: load("About"),
+        meta: {
+          prev: {
+            name: "home"
+          },
+          next: {
+            name: "games",
+            params: {
+              game: "memory"
+            }
+          }
+        }
       },
       {
         path: "games/:game",

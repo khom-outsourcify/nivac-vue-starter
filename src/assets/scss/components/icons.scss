@@ -1,0 +1,40 @@
+.icon-arrow {
+  width: rem(50);
+  height: rem(50);
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &::before {
+    content: "";
+    display: block;
+    width: rem(25);
+    height: rem(25);
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-color: #000;
+    border-width: 2px 2px 0 0;
+    position: absolute;
+    transform-origin: 50% 50%;
+  }
+
+  &.prev {
+    left: rem(10);
+
+    &:before {
+      transform: rotate(-135deg);
+      margin: rem(-15) 0 0 rem(-10);
+    }
+  }
+
+  &.next {
+    right: rem(10);
+
+    &:before {
+      transform: rotate(45deg);
+      margin: rem(-15) 0 0 rem(-20);
+    }
+  }
+}
